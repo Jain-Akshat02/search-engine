@@ -1,5 +1,4 @@
-
-import getConnection from '@/../lib/db';
+import getConnection from '../../../../lib/db';
 import * as r from 'rethinkdb';
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -28,3 +27,5 @@ export async function GET() {
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
+
+

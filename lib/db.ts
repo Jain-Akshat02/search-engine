@@ -1,8 +1,9 @@
-import r from 'rethinkdb';
+import * as r from 'rethinkdb';
 
-let connection = null;
+// It's a good practice to create a single connection object and reuse it
+let connection: r.Connection | null = null;
 
-async function getConnection() {
+async function getConnection(): Promise<r.Connection> {
   if (connection) {
     return connection;
   }
